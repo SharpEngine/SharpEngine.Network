@@ -7,5 +7,5 @@
 [#] Bug Fixes<br>
 [.] Others
 
-### V 1.0.0 - ??/08/2023
+### V 1.0.0 - 13/08/2023
 [.] First version
