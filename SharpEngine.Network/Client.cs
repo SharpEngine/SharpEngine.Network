@@ -44,17 +44,17 @@ public class Client
     /// Event when packet is received
     /// </summary>
     public event ReceivePacket? PacketReceived;
-    
+
     /// <summary>
     /// Event when client is connected
     /// </summary>
     public event Connected? PeerConnected;
-    
+
     /// <summary>
     /// Event when client is disconnected
     /// </summary>
     public event Disconnected? PeerDisconnected;
-    
+
     /// <summary>
     /// Event when error is received
     /// </summary>
@@ -75,7 +75,7 @@ public class Client
         _client = new NetManager(_listener);
         _client.Start();
         _server = _client.Connect(ip, port, key);
-        
+
         _listener.NetworkReceiveEvent += ReceiveEvent;
         _listener.PeerConnectedEvent += _ => PeerConnected?.Invoke();
         _listener.NetworkErrorEvent += (endPoint, error) => ErrorReceived?.Invoke(endPoint, error);
@@ -90,7 +90,8 @@ public class Client
     /// <param name="packet">Packet</param>
     /// <typeparam name="T">Type of Packet</typeparam>
     /// <exception cref="UnknownPacketException">Exception thrown when packet is unknown</exception>
-    public void SendPacket<T>(T packet) where T : notnull
+    public void SendPacket<T>(T packet)
+        where T : notnull
     {
         if (!PacketTypes.Contains(packet.GetType()))
             throw new UnknownPacketException($"Unknown Packet : {packet.GetType()}");
@@ -111,7 +112,12 @@ public class Client
         IsRunning = false;
     }
 
-    private void ReceiveEvent(NetPeer peer, NetPacketReader reader, byte channel, DeliveryMethod deliveryMethod)
+    private void ReceiveEvent(
+        NetPeer peer,
+        NetPacketReader reader,
+        byte channel,
+        DeliveryMethod deliveryMethod
+    )
     {
         var packetType = reader.GetString();
         foreach (var type in PacketTypes)

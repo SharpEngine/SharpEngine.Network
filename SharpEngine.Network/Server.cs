@@ -34,7 +34,7 @@ public class Server
     /// Delegate for ErrorReceived Event
     /// </summary>
     public delegate void NetworkError(IPEndPoint endPoint, SocketError error);
-    
+
     /// <summary>
     /// List of all packets unknown by Server
     /// </summary>
@@ -44,17 +44,17 @@ public class Server
     /// Event when packet is received
     /// </summary>
     public event ReceivePacket? PacketReceived;
-    
+
     /// <summary>
     /// Event when client is connected
     /// </summary>
     public event Connected? PeerConnected;
-    
+
     /// <summary>
     /// Event when client is disconnected
     /// </summary>
     public event Disconnected? PeerDisconnected;
-    
+
     /// <summary>
     /// Event when error is received
     /// </summary>
@@ -105,7 +105,8 @@ public class Server
     /// <param name="packet">Packet</param>
     /// <typeparam name="T">Type of Packet</typeparam>
     /// <exception cref="UnknownPacketException">Exception thrown when packet is unknown</exception>
-    public void BroadcastPacket<T>(T packet) where T : notnull
+    public void BroadcastPacket<T>(T packet)
+        where T : notnull
     {
         foreach (var peer in _server.ConnectedPeerList)
             SendPacket(packet, peer);
@@ -118,14 +119,20 @@ public class Server
     /// <param name="peer">Client</param>
     /// <typeparam name="T">Type of Packet</typeparam>
     /// <exception cref="UnknownPacketException">Exception thrown when packet is unknown</exception>
-    public void SendPacket<T>(T packet, NetPeer peer) where T : notnull
+    public void SendPacket<T>(T packet, NetPeer peer)
+        where T : notnull
     {
         if (!PacketTypes.Contains(packet.GetType()))
             throw new UnknownPacketException($"Unknown Packet : {packet.GetType()}");
         Common.SendPacket(peer, packet);
     }
 
-    private void NetworkReceive(NetPeer peer, NetPacketReader reader, byte channel, DeliveryMethod deliverymethod)
+    private void NetworkReceive(
+        NetPeer peer,
+        NetPacketReader reader,
+        byte channel,
+        DeliveryMethod deliverymethod
+    )
     {
         var packetType = reader.GetString();
         foreach (var type in PacketTypes)

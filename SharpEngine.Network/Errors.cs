@@ -9,7 +9,8 @@ public class UnknownPacketException : Exception
     /// Create Unknown Packet Exception
     /// </summary>
     /// <param name="message">Exception Message</param>
-    public UnknownPacketException(string? message): base(message) {}
+    public UnknownPacketException(string? message)
+        : base(message) { }
 }
 
 /// <summary>
@@ -21,7 +22,8 @@ public class UnknownPropertyTypeException : Exception
     /// Create Unknown Property Type Exception
     /// </summary>
     /// <param name="message">Exception Message</param>
-    public UnknownPropertyTypeException(string? message): base(message) {}
+    public UnknownPropertyTypeException(string? message)
+        : base(message) { }
 }
 
 /// <summary>
@@ -33,7 +35,8 @@ public class UnknownFieldTypeException : Exception
     /// Create Unknown Field Type Exception
     /// </summary>
     /// <param name="message">Exception Message</param>
-    public UnknownFieldTypeException(string? message): base(message) {}
+    public UnknownFieldTypeException(string? message)
+        : base(message) { }
 }
 
 /// <summary>
@@ -45,7 +48,8 @@ public class UnknownPropertyException : Exception
     /// Create Unknown Property Exception
     /// </summary>
     /// <param name="message">Exception Message</param>
-    public UnknownPropertyException(string? message): base(message) {}
+    public UnknownPropertyException(string? message)
+        : base(message) { }
 }
 
 /// <summary>
@@ -57,5 +61,6 @@ public class UnknownFieldException : Exception
     /// Create Unknown Type Exception
     /// </summary>
     /// <param name="message">Exception Message</param>
-    public UnknownFieldException(string? message): base(message) {}
+    public UnknownFieldException(string? message)
+        : base(message) { }
 }
