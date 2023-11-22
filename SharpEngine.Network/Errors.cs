@@ -3,64 +3,39 @@ namespace SharpEngine.Network;
 /// <summary>
 /// Exception which be thrown when Packet is unknown
 /// </summary>
-public class UnknownPacketException : Exception
+/// <param name="message">Exception Message</param>
+public class UnknownPacketException(string? message) : Exception(message)
 {
-    /// <summary>
-    /// Create Unknown Packet Exception
-    /// </summary>
-    /// <param name="message">Exception Message</param>
-    public UnknownPacketException(string? message)
-        : base(message) { }
 }
 
 /// <summary>
 /// Exception which be thrown when Type of Property is unknown
 /// </summary>
-public class UnknownPropertyTypeException : Exception
+/// <param name="message">Exception Message</param>
+public class UnknownPropertyTypeException(string? message) : Exception(message)
 {
-    /// <summary>
-    /// Create Unknown Property Type Exception
-    /// </summary>
-    /// <param name="message">Exception Message</param>
-    public UnknownPropertyTypeException(string? message)
-        : base(message) { }
 }
 
 /// <summary>
 /// Exception which be thrown when Type of Field is unknown
 /// </summary>
-public class UnknownFieldTypeException : Exception
+/// <param name="message">Exception Message</param>
+public class UnknownFieldTypeException(string? message) : Exception(message)
 {
-    /// <summary>
-    /// Create Unknown Field Type Exception
-    /// </summary>
-    /// <param name="message">Exception Message</param>
-    public UnknownFieldTypeException(string? message)
-        : base(message) { }
 }
 
 /// <summary>
 /// Exception which be thrown when Property is unknown
 /// </summary>
-public class UnknownPropertyException : Exception
+/// <param name="message">Exception Message</param>
+public class UnknownPropertyException(string? message) : Exception(message)
 {
-    /// <summary>
-    /// Create Unknown Property Exception
-    /// </summary>
-    /// <param name="message">Exception Message</param>
-    public UnknownPropertyException(string? message)
-        : base(message) { }
 }
 
 /// <summary>
 /// Exception which be thrown when Field is unknown
 /// </summary>
-public class UnknownFieldException : Exception
+/// <param name="message">Exception Message</param>
+public class UnknownFieldException(string? message) : Exception(message)
 {
-    /// <summary>
-    /// Create Unknown Type Exception
-    /// </summary>
-    /// <param name="message">Exception Message</param>
-    public UnknownFieldException(string? message)
-        : base(message) { }
 }

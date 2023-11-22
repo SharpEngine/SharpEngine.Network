@@ -33,7 +33,7 @@ public class Client
     /// <summary>
     /// List of all packets unknown by Client
     /// </summary>
-    public List<Type> PacketTypes { get; } = new();
+    public List<Type> PacketTypes { get; } = [];
 
     /// <summary>
     /// If Client is Running

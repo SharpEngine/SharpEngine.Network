@@ -38,7 +38,7 @@ public class Server
     /// <summary>
     /// List of all packets unknown by Server
     /// </summary>
-    public List<Type> PacketTypes { get; } = new();
+    public List<Type> PacketTypes { get; } = [];
 
     /// <summary>
     /// Event when packet is received

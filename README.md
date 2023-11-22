@@ -9,5 +9,5 @@ Network Package for SharpEngine - C# 2D Game Engine
 
 ## Dependencies
 
-- Net7
+- Net8
 - LiteNetLib

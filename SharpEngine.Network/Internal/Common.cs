@@ -21,12 +21,7 @@ internal static class Common
         for (var i = 0; i < numberProp; i++)
         {
             var propName = reader.GetString();
-            var prop = type.GetProperty(propName);
-            if (prop == null)
-                throw new UnknownPropertyException(
-                    $"Property : {propName} - Packet : {packetType}"
-                );
-
+            var prop = type.GetProperty(propName) ?? throw new UnknownPropertyException($"Property : {propName} - Packet : {packetType}");
             object packetObj = packet!;
 
             #region Basic Type
@@ -74,10 +69,7 @@ internal static class Common
         for (var i = 0; i < numberField; i++)
         {
             var fieldName = reader.GetString();
-            var field = type.GetField(fieldName);
-            if (field == null)
-                throw new UnknownFieldException($"Field : {fieldName} - Packet : {packetType}");
-
+            var field = type.GetField(fieldName) ?? throw new UnknownFieldException($"Field : {fieldName} - Packet : {packetType}");
             object packetObj = packet!;
 
             #region Basic Type
