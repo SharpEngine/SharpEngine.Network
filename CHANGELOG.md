@@ -7,6 +7,9 @@
 [#] Bug Fixes<br>
 [.] Others
 
+### V 1.2.0 - 29/11/2023
+[.] Refactor with SonarCloud
+
 ### V 1.1.0 - 22/11/2023
 [.] Net 8 
 
