@@ -7,6 +7,9 @@
 [#] Bug Fixes<br>
 [.] Others
 
+### V 1.2.1 - 24/12/2024
+[.] LiteNetLib : 1.3.1
+
 ### V 1.2.0 - 29/11/2023
 [.] Refactor with SonarCloud
 
