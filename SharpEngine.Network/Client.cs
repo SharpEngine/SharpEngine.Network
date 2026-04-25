@@ -120,13 +120,9 @@ public class Client
     )
     {
         var packetType = reader.GetString();
-        foreach (var type in PacketTypes)
-        {
-            if (packetType == type.Name)
-            {
-                PacketReceived?.Invoke(Common.ReadPacket(reader, packetType, type));
-                break;
-            }
-        }
+        var type = PacketTypes.FirstOrDefault(x => x.Name == packetType);
+        if (type == null)
+            return;
+        PacketReceived?.Invoke(Common.ReadPacket(reader, packetType, type));
     }
 }

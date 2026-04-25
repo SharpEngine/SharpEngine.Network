@@ -7,6 +7,10 @@
 [#] Bug Fixes<br>
 [.] Others
 
+### V 1.3.0 - 26/04/2026
+[.] LiteNetLib : 2.1.3<br/>
+[.] DotNet : 10
+
 ### V 1.2.1 - 24/12/2024
 [.] LiteNetLib : 1.3.1
 

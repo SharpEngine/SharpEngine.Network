@@ -108,7 +108,9 @@ public class Server
     public void BroadcastPacket<T>(T packet)
         where T : notnull
     {
-        foreach (var peer in _server.ConnectedPeerList)
+        var peers = new List<NetPeer>();
+        _server.GetConnectedPeers(peers);
+        foreach (var peer in peers)
             SendPacket(packet, peer);
     }
 
